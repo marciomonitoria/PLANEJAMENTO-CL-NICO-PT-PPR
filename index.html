@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Formulário de Planejamento Clínico</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Planejamento Clínico — Formulário</h1>
+    <p class="intro">Preencha os campos abaixo com atenção. Ao enviar, seu cliente de e‑mail abrirá uma mensagem pré‑preenchida para <strong>marcioodonto@proton.me</strong>.</p>
+
+    <form id="planningForm" novalidate>
+      <fieldset>
+        <legend>Informações do atendimento</legend>
+
+        <label for="dupla">🧑‍🤝‍🧑 Dupla:
+          <input type="text" id="dupla" name="dupla" placeholder="Nome(s) do(s) aluno(s)" required />
+        </label>
+
+        <label for="paciente">🧑‍⚕️ Paciente:
+          <input type="text" id="paciente" name="paciente" placeholder="Nome / Identificação" required />
+        </label>
+
+        <label for="data">📅 Data:
+          <input type="date" id="data" name="data" required />
+        </label>
+
+        <div class="turnos">
+          <span>🕒 Turno:</span>
+          <label class="checkbox">
+            <input type="checkbox" id="manha" name="turno" value="Manhã" /> Manhã
+          </label>
+          <label class="checkbox">
+            <input type="checkbox" id="tarde" name="turno" value="Tarde" /> Tarde
+          </label>
+          <small class="hint">Marque um ou ambos os turnos. Não há opção noite.</small>
+        </div>
+
+        <label for="objetivo">🎯 Objetivo da clínica por turno:
+          <textarea id="objetivo" name="objetivo" rows="4" placeholder="Descreva claramente os objetivos clínicos para este atendimento" required></textarea>
+        </label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Sequência clínica e materiais</legend>
+
+        <label for="sequencia">🧰 Sequência clínica, material e instrumental necessário:
+          <textarea id="sequencia" name="sequencia" rows="6" placeholder="Descreva a sequência dos procedimentos planejados e lista de materiais/instrumentos" required></textarea>
+        </label>
+      </fieldset>
+
+      <div class="actions">
+        <button type="submit" id="submitBtn">Enviar formulário</button>
+      </div>
+
+      <p id="formMessage" role="status" aria-live="polite"></p>
+    </form>
+
+    <footer>
+      <small>Observação: o envio abrirá seu cliente de e‑mail. Caso prefira usar outro método de envio (ex.: servidor), posso adicionar uma solução com backend.</small>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
